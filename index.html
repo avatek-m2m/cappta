@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuração de APN para POS Android</title>
+    <title>Cappta - Configuração de APN para POS Android</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/vmacagnani/api-pre-os/raw/main/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,11 +69,9 @@
 
         <div class="w-full bg-slate-800 rounded-xl shadow-lg p-6 sm:p-8 self-center">
             <div class="text-center">
-                
-                <a href="https://avatek.saitro.com/sistema/login/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://raw.githubusercontent.com/avatek-m2m/pos-android/main/Avatek-logo-2.svg" alt="Logo Avatek" class="h-12 mx-auto">
+                <a href="https://www.cappta.com.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://raw.githubusercontent.com/avatek-m2m/cappta/main/cappta-removebg-preview.png" alt="Logo Cappta" class="h-12 mx-auto">
                 </a>
-                
                 <h1 class="text-2xl font-bold text-white mt-2">Simulador de Configuração Android</h1>
                 <p class="text-slate-400 mt-2">Siga a simulação ao lado para configurar o seu POS.</p>
 
@@ -161,13 +159,11 @@
             const operatorOptions = document.getElementById('operator-options');
             const btnRestartSimulation = document.getElementById('btn-restart-simulation');
             
-            const operatorInfo = { vivo: { label: 'Vivo', logo: 'https://logo.clearbit.com/vivo.com.br' }, claro: { label: 'Claro', logo: 'https://logo.clearbit.com/claro.com.br' }, tim: { label: 'TIM', logo: 'https://logo.clearbit.com/tim.com.br' } };
-            
-            const apnData = {
-                vivo: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' },
-                claro: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' },
-                tim: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }
-            };
+            // ==========================================================
+            // LISTAS DE OPERADORAS E APN ATUALIZADAS
+            // ==========================================================
+            const operatorInfo = { vivo: { label: 'Vivo', logo: 'https://logo.clearbit.com/vivo.com.br' }, claro: { label: 'Claro', logo: 'https://logo.clearbit.com/claro.com.br' }, tim: { label: 'TIM', logo: 'https://logo.clearbit.com/tim.com.br' }, nlt: { label: 'NLT', logo: 'https://logo.clearbit.com/nlt.com.br' }, linksfield: { label: 'Linksfield', logo: 'https://logo.clearbit.com/linksfield.com.br' }, emnify: { label: 'Emnify', logo: 'https://logo.clearbit.com/emnify.com' }, eseye: { label: 'ESEYE', logo: 'https://logo.clearbit.com/eseye.com.br' }, vivo_bl: { label: 'Vivo Banda Larga', logo: 'https://logo.clearbit.com/vivo.com.br' }, claro_bl: { label: 'Claro Banda Larga', logo: 'https://logo.clearbit.com/claro.com.br' }, tim_bl: { label: 'TIM Banda Larga', logo: 'https://logo.clearbit.com/tim.com.br' } };
+            const apnData = { vivo: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }, claro: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }, tim: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }, nlt: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }, linksfield: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }, emnify: { name: 'CAPPTA', apn: 'cappta.br', user: 'cappta', password: 'cappta' }, eseye: { name: 'CAPPTA', apn: 'eseye.com', user: 'user', password: 'pass' }, vivo_bl: { name: 'CAPPTA', apn: 'capptabl.br', user: 'cappta', password: 'cappta' }, claro_bl: { name: 'CAPPTA', apn: 'capptabl.br', user: 'cappta', password: 'cappta' }, tim_bl: { name: 'CAPPTA', apn: 'capptabl.br', user: 'cappta', password: 'cappta' } };
             
             let currentApnData = null;
             let simulationActive = false;
@@ -187,7 +183,7 @@
                 homeMessage.textContent = 'Selecione uma operadora ao lado para iniciar a simulação.';
                 selectedOperatorLabel.innerHTML = `<span class="text-slate-400">Escolha uma operadora...</span>`;
             }
-            function handleOperatorSelection(operatorKey) { resetSimulation(); if (operatorKey && apnData[operatorKey]) { currentApnData = apnData[operatorKey]; simulationActive = true; btnSettingsIcon.style.cursor = 'pointer'; btnSettingsIcon.firstElementChild.classList.add('bg-indigo-500'); btnSettingsIcon.firstElementChild.classList.remove('bg-gray-500'); homeMessage.textContent = 'Clique no ícone "Configurar" para começar.'; highlightElements(btnSettingsIcon); apnName.textContent = currentApnData.name; apnValue.textContent = currentApnData.apn; apnUser.textContent = currentApnData.user; apnPassword.textContent = currentApnData.password; configDetails.classList.remove('hidden'); const qrCodeUrl = 'https://raw.githubusercontent.com/vmacagnani/pos-android/main/QRCode1.jpeg'; qrcodeImage.src = qrCodeUrl; qrcodeContainer.classList.remove('hidden'); const info = operatorInfo[operatorKey]; selectedOperatorLabel.innerHTML = `<img src="${info.logo}" alt="${info.label}" class="h-5 w-5 mr-2 rounded-full" onerror="this.style.display='none'"><span>${info.label}</span>`; } }
+            function handleOperatorSelection(operatorKey) { resetSimulation(); if (operatorKey && apnData[operatorKey]) { currentApnData = apnData[operatorKey]; simulationActive = true; btnSettingsIcon.style.cursor = 'pointer'; btnSettingsIcon.firstElementChild.classList.add('bg-indigo-500'); btnSettingsIcon.firstElementChild.classList.remove('bg-gray-500'); homeMessage.textContent = 'Clique no ícone "Configurar" para começar.'; highlightElements(btnSettingsIcon); apnName.textContent = currentApnData.name; apnValue.textContent = currentApnData.apn; apnUser.textContent = currentApnData.user; apnPassword.textContent = currentApnData.password; configDetails.classList.remove('hidden'); const isEseye = operatorKey === 'eseye'; const qrCodeUrl = isEseye ? 'https://raw.githubusercontent.com/vmacagnani/pos-android/main/QRCodeESEYE.jpg' : 'https://raw.githubusercontent.com/vmacagnani/pos-android/main/QRCode1.jpeg'; qrcodeImage.src = qrCodeUrl; qrcodeContainer.classList.remove('hidden'); const info = operatorInfo[operatorKey]; selectedOperatorLabel.innerHTML = `<img src="${info.logo}" alt="${info.label}" class="h-5 w-5 mr-2 rounded-full" onerror="this.style.display='none'"><span>${info.label}</span>`; } }
             resetSimulation();
             const resetOption = document.createElement('div');
             resetOption.classList.add('px-4', 'py-2', 'hover:bg-slate-600', 'cursor-pointer', 'flex', 'items-center');
