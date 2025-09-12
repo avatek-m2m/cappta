@@ -28,8 +28,20 @@
             100% { top: 0; }
         }
         #robbu-whatsapp-button.left { bottom: 18px; }
-        #home-screen-logo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: auto; opacity: 0.35; z-index: 1; }
-        #btn-settings-icon, #home-message { position: relative; z-index: 10; }
+        #home-screen-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: auto;
+            opacity: 0.35;
+            z-index: 1;
+        }
+        #btn-settings-icon, #home-message {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 <body class="bg-slate-900 flex items-center justify-center min-h-screen p-4">
@@ -40,9 +52,7 @@
                 <div class="w-full h-full bg-gray-800 rounded-[20px] overflow-hidden">
                     <div id="pos-screen" class="h-[600px] relative">
                         <div id="screen-home" class="screen-view p-4 flex flex-col items-center justify-center text-center">
-                            
-                            <img src="https://raw.githubusercontent.com/avatek-m2m/cappta/main/cappta-removebg-preview.png" alt="Cappta Logo" id="home-screen-logo">
-
+                            <img src="https://raw.githubusercontent.com/avatek-m2m/paytime/main/paytime.png" alt="Paytime Logo" id="home-screen-logo">
                             <div id="btn-settings-icon" class="text-center p-2 rounded-lg transition-colors">
                                 <div class="w-16 h-16 bg-gray-500 rounded-2xl flex items-center justify-center mb-1 text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg></div>
                                 <span class="text-sm text-gray-700">Configurar</span>
@@ -68,11 +78,19 @@
                 </a>
                 <h1 class="text-2xl font-bold text-white mt-2">Simulador de Configuração Android</h1>
                 <p class="text-slate-400 mt-2">Siga a simulação ao lado para configurar o seu POS.</p>
-                <div class="mt-6">
-                    <a href="boas-praticas.html" class="inline-block bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
-                        Ver Boas Práticas de Uso do SIM Card
+                
+                <div class="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="boas-praticas.html" class="inline-flex items-center justify-center w-full sm:w-auto bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Ver Boas Práticas
+                    </a>
+                    <a href="index-linux.html" class="inline-flex items-center justify-center w-full sm:w-auto bg-slate-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-slate-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M6 16h.01" />
+                        </svg>
+                        Ir para Simulador Linux
                     </a>
                 </div>
+
             </div>
             <div class="mt-8 relative">
                 <label for="operator-select-button" class="block text-sm font-medium text-slate-300">1. Selecione a operadora</label>
